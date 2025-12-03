@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>About — OrbitWatch</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header class="site-header container">
+    <a class="brand" href="index.html">OrbitWatch</a>
+    <nav class="main-nav">
+      <a href="index.html">Home</a>
+      <a href="tracker.html">Tracker</a>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="about.html" class="active">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <h1>About OrbitWatch</h1>
+      <p>OrbitWatch uses Two-Line Elements (TLE) and SGP4 propagation (via satellite.js) to compute satellite positions and display them on a map. TLEs are public data available from sources like Celestrak.</p>
+      <h2>How it works</h2>
+      <ol>
+        <li>Fetch TLE for a satellite (by NORAD catalog number).</li>
+        <li>Use SGP4 to compute Earth-centered inertial (ECI) coordinates at the current time.</li>
+        <li>Convert to geodetic coordinates (lat/long/alt) and plot on the map.</li>
+      </ol>
+      <p>If you want real-time telemetry from operators (telemetry streams) or integration with N2YO, Space-Track, or a ground-station API, I can add those integrations.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer container">
+    <p>&copy; <span id="year4"></span> OrbitWatch</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
