@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>OrbitWatch — Dashboard</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header class="site-header container">
+    <a class="brand" href="index.html">OrbitWatch</a>
+    <nav class="main-nav">
+      <a href="index.html">Home</a>
+      <a href="tracker.html">Tracker</a>
+      <a href="dashboard.html" class="active">Dashboard</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <h2>Live Dashboard</h2>
+      <p>Quick actions:</p>
+      <ul>
+        <li>Track ISS → <a href="tracker.html" onclick="document.getElementById('sat-input')?.focus()">Open Tracker</a></li>
+        <li>Use NORAD IDs: ISS = <code>25544</code>, Hubble = <code>20580</code></li>
+      </ul>
+      <p>Want a multi-satellite dashboard (fleet tracking), ground station passes, or alerts? I can add those features — tell me which.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer container">
+    <p>&copy; <span id="year3"></span> OrbitWatch</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
