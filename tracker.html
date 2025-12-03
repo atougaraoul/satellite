@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>OrbitWatch — Tracker</title>
+  <meta name="description" content="Live satellite tracker using TLE and satellite.js" />
+  <link rel="stylesheet" href="css/styles.css">
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-xwE/ZXq3pX0vY2g2Jf0VYb6gYv5fYw5mQmZrl0+vuoM=" crossorigin=""/>
+</head>
+<body>
+  <header class="site-header container">
+    <a class="brand" href="index.html">OrbitWatch</a>
+    <nav class="main-nav">
+      <a href="index.html">Home</a>
+      <a href="tracker.html" class="active">Tracker</a>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="tracker-controls card">
+      <h2>Satellite tracker</h2>
+      <p>Enter a NORAD Catalog Number (e.g., <code>25544</code> for ISS) or a name (e.g., <code>ISS</code>), then click <strong>Track</strong>.</p>
+
+      <div class="form-row">
+        <input id="sat-input" placeholder="NORAD ID or name (e.g., 25544 or ISS)" />
+        <button id="track-btn" class="btn">Track</button>
+        <button id="stop-btn" class="btn secondary">Stop</button>
+      </div>
+
+      <div class="small muted">If fetch from Celestrak fails, a sample ISS TLE is used.</div>
+    </section>
+
+    <section class="map-section card">
+      <div id="map" style="height:520px;"></div>
+    </section>
+
+    <section class="telemetry card" id="telemetry" style="display:none;">
+      <h3>Telemetry</h3>
+      <ul id="telemetry-list">
+        <li><strong>Name:</strong> <span id="sat-name">—</span></li>
+        <li><strong>NORAD ID:</strong> <span id="sat-id">—</span></li>
+        <li><strong>Latitude:</strong> <span id="lat">—</span></li>
+        <li><strong>Longitude:</strong> <span id="lng">—</span></li>
+        <li><strong>Altitude (km):</strong> <span id="alt">—</span></li>
+        <li><strong>Velocity (km/s):</strong> <span id="vel">—</span></li>
+        <li><strong>Timestamp (UTC):</strong> <span id="ts">—</span></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="site-footer container">
+    <p>&copy; <span id="year2"></span> OrbitWatch</p>
+  </footer>
+
+  <!-- Libraries -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-VdG8Q8bKXhY2s2s6rQ9k0zqk3zqz4s3q2v9qk3k7EJk=" crossorigin=""></script>
+
+  <!-- satellite.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/satellite.js/4.0.0/satellite.min.js"></script>
+
+  <script src="js/main.js"></script>
+  <script src="js/tracker.js"></script>
+</body>
+</html>
