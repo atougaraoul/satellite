@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>OrbitWatch — Home</title>
+  <meta name="description" content="OrbitWatch — live satellite tracking using TLE + satellite.js" />
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header class="site-header container">
+    <a class="brand" href="index.html">
+      <img src="assets/logo.png" alt="OrbitWatch logo" class="logo" onerror="this.style.display='none'">
+      <span class="brand-text">OrbitWatch</span>
+    </a>
+
+    <nav class="main-nav">
+      <a href="index.html">Home</a>
+      <a href="tracker.html">Tracker</a>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main class="container hero">
+    <h1>Track satellites in real time</h1>
+    <p>Enter a NORAD catalog number or name on the Tracker page to see its live position, orbital path, and telemetry. Built with TLE propagation (satellite.js) and an interactive map (Leaflet).</p>
+
+    <p class="hero-cta">
+      <a class="btn" href="tracker.html">Open Tracker</a>
+      <a class="btn secondary" href="dashboard.html">Live Dashboard</a>
+    </p>
+
+    <section class="features">
+      <article class="card"><h3>Accurate</h3><p>Propagates using TLEs and SGP4 via satellite.js.</p></article>
+      <article class="card"><h3>Interactive</h3><p>Pan/zoom map, show orbital ground track and footprint.</p></article>
+      <article class="card"><h3>Open data</h3><p>Fetch TLEs from Celestrak or paste your own.</p></article>
+    </section>
+  </main>
+
+  <footer class="site-footer container">
+    <p>&copy; <span id="year"></span> OrbitWatch</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
